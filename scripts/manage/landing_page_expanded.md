@@ -219,20 +219,19 @@ The application's *Next Steps* section contains the relevant links and operator 
 
 Granting someone the `Owner` role does not implicitly grant them access as a user. For configuring user access, please continue on to the *Configure User Access (IAP)* section.
 
-## Use Spinnaker
-
-### Forward the port to Deck, and connect
-
-Don't use the `hal deploy connect` command. Instead, use the following command
-only.
+## Configure User Access (IAP)
 
 ```bash
-~/cloudshell_open/spinnaker-for-gcp/scripts/manage/connect_unsecured.sh
+~/cloudshell_open/spinnaker-for-gcp/scripts/manage/grant_iap_access.sh
 ```
 
-To connect to the Deck UI, click on the Preview button above and select "Preview on port 8080":
+Alternatively, you can manually grant the `IAP-secured Web App User` role on the `spinnaker/spin-deck` resource to the user you'd like to grant access to [here](https://console.developers.google.com/security/iap?project={{project-id}}).
 
-![Image](https://github.com/GoogleCloudPlatform/spinnaker-for-gcp/raw/master/scripts/manage/preview_button.png)
+## Use Spinnaker
+
+### Connect to Spinnaker
+
+Connect to your Spinnaker installation [here](https://spinnaker.endpoints.spinnaker-388416.cloud.goog).
 
 ### View Spinnaker Audit Log
 
@@ -243,17 +242,6 @@ View the who, what, when and where of your Spinnaker installation
 
 View the logging output of the individual components of your Spinnaker installation
 [here](https://console.developers.google.com/logs/viewer?project={{project-id}}&resource=k8s_container%2Fcluster_name%2Fspinnaker%2Fnamespace_name%2Fspinnaker).
-
-### Expose Spinnaker
-
-If you would like to connect to Spinnaker without relying on port forwarding, we can
-expose it via a secure domain behind the [Identity-Aware Proxy](https://cloud.google.com/iap/).
-
-Note that this phase could take 30-60 minutes. **Spinnaker will be inaccessible during this time.**
-
-```bash
-~/cloudshell_open/spinnaker-for-gcp/scripts/expose/configure_endpoint.sh
-```
 
 ### Install sample applications and pipelines
 

@@ -257,6 +257,8 @@ data:
             customResources: []
             cachingPolicies: []
             oAuthScopes: []
+            rawResourcesEndpointConfig:
+              kindExpressions: []
           primaryAccount: spinnaker-install-account
         oracle:
           enabled: false
