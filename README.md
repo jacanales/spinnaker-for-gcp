@@ -90,7 +90,7 @@ that provides command-line access to GCP.
 command in Cloud Shell:
 
 ```bash
-cloudshell launch-tutorial ~/spinnaker-for-gcp/scripts/install/provision-spinnaker.md
+cloudshell launch-tutorial ~/cloudshell_open/spinnaker-for-gcp/scripts/install/provision-spinnaker.md
 ```
 
 * If you need to find your way back to the management console, you can relaunch
@@ -309,7 +309,7 @@ following command (which is also on step 5 of the management part of the
 console):
 
    ```bash
-   ~/spinnaker-for-gcp/scripts/manage/grant_iap_access.sh
+   ~/cloudshell_open/spinnaker-for-gcp/scripts/manage/grant_iap_access.sh
    ```
 
    ...and follow the instructions on the Cloud Shell command line.
@@ -324,15 +324,15 @@ Engine and AWS, you'll add a provider account for each.
 
 The management console includes the following command, for adding a GKE account:
 
-`~/spinnaker-for-gcp/scripts/manage/add_gke_account.sh`
+`~/cloudshell_open/spinnaker-for-gcp/scripts/manage/add_gke_account.sh`
 
 And for Google Compute Engine:
 
-`~/spinnaker-for-gcp/scripts/manage/add_gce_account.sh`
+`~/cloudshell_open/spinnaker-for-gcp/scripts/manage/add_gce_account.sh`
 
 And for Google App Engine:
 
-`~/spinnaker-for-gcp/scripts/manage/add_gae_account.sh`
+`~/cloudshell_open/spinnaker-for-gcp/scripts/manage/add_gae_account.sh`
 
 You can run these commands from the management console or enter them in Cloud
 Shell against an existing Spinnaker instance.
@@ -354,7 +354,7 @@ console, *after* you've installed Spinnaker
 
 1. In the console, navigate to the management flow:
 
-   `~/spinnaker-for-gcp/scripts/manage/update_console.sh`
+   `~/cloudshell_open/spinnaker-for-gcp/scripts/manage/update_console.sh`
 
 1. Click **Next** until you see the screen titled "Scripts for Common Commands."
 
@@ -365,7 +365,7 @@ console, *after* you've installed Spinnaker
 
    ```bash
    cloudshell edit \
-    ~/spinnaker-for-gcp/scripts/install/properties
+    ~/cloudshell_open/spinnaker-for-gcp/scripts/install/properties
     ```
 
 1. Edit the Spinnaker version in the `properties` file that is displayed.
@@ -380,7 +380,7 @@ console, *after* you've installed Spinnaker
 1. Use the following command to invoke Halyard to apply the changes:
 
    ```bash
-   ~/spinnaker-for-gcp/scripts/manage/update_spinnaker_version.sh
+   ~/cloudshell_open/spinnaker-for-gcp/scripts/manage/update_spinnaker_version.sh
    ```
 
 ## Restart the management console
@@ -410,7 +410,7 @@ The management console is upgraded to include the latest changes.
 > **Warning:** If you installed Spinnaker on pre-existing infrastructure (GKE
 > cluster, Redis, service accounts), this script deletes those items. If you
 > want to keep them, edit the generated cleanup script
-> (`~/spinnaker-for-gcp/scripts/manage/generate_deletion_script.sh`) to comment
+> (`~/cloudshell_open/spinnaker-for-gcp/scripts/manage/generate_deletion_script.sh`) to comment
 > out the specific deletion commands for items you want to keep.
 
 If you want to remove Spinnaker for any reason:
@@ -477,7 +477,7 @@ installation flow):
 
    ```bash
    cloudshell edit \
-       ~/spinnaker-for-gcp/scripts/install/properties
+       ~/cloudshell_open/spinnaker-for-gcp/scripts/install/properties
    ```
 
    The properties file is opened in the file editor.
@@ -523,10 +523,10 @@ To manage one of those installations:
 1. Pull the configuration stored in that cluster.
 
    ```bash
-   ~/spinnaker-for-gcp/scripts/manage/pull_config.sh
+   ~/cloudshell_open/spinnaker-for-gcp/scripts/manage/pull_config.sh
    ```
 
-The config now in `~/spinnaker-for-gcp/scripts/install/properties` is the one
+The config now in `~/cloudshell_open/spinnaker-for-gcp/scripts/install/properties` is the one
 for that Spinnaker instance. Perform the usual management tasks available to
 you, including running `hal` commands. Spinnaker applies those commands to the
 Spinnaker instance in the chosen context.
